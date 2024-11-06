@@ -1,0 +1,302 @@
+/* ==========TENTANG KAMI=============*/
+/* Container utama */
+.tentang-kami {
+    background: rgba(255, 255, 255, 0.8); /* Transparan putih untuk kontras */
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 10px;
+}
+
+/* Heading utama */
+.tentang-kami h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-left: 5%;
+    margin-right:5%;
+}
+
+/* Deskripsi teks */
+.deskripsi {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    margin-left: 5%;
+    margin-right:5%;
+    width:auto;
+}
+
+/* Highlight teks */
+.highlight {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Table styling */
+.kepala-desa-table {
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 5%;
+    margin-right:5%;
+    width:auto;
+}
+
+.kepala-desa-table th,
+.kepala-desa-table td {
+    border: 2px solid #555;
+    padding: 10px;
+}
+
+.kepala-desa-table th {
+    background-color: #333;
+    color: #fff;
+}
+
+.kepala-desa-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.kepala-desa-table tbody tr:nth-child(odd) {
+    background-color: #e0e0e0;
+}
+
+/* Container utama */
+.visimisi-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul Utama */
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #00796b;
+    font-weight: bold;
+}
+
+/* Styling untuk bagian Visi dan Misi */
+.visi, .misi {
+    margin-top: 20px;
+    padding: 20px;
+    background-color:transparant;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #00796b;
+    border-radius: 5px;
+    margin-left:5%;
+    margin-right:5%;
+    width: auto;
+}
+
+/* Judul subbagian Visi dan Misi */
+.visi h2, .misi h2 {
+    font-size: 1.5em;
+    color: #004d40;
+    margin-bottom: 10px;
+}
+
+/* Teks dan list untuk Visi dan Misi */
+.visi p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.misi ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    background-color: transparent;
+}
+
+.misi ul li {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+/*=====VISI MISI=====*/
+header h1 {
+    font-size: 25px;
+    color: #000000;
+    text-align: center;
+}
+
+/* Gaya untuk Garis horizontal */
+.header::before {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background-color: #222;
+    margin-right: 20px;
+}
+
+/* Gaya untuk Garis Vertikal */
+.horizontal-line {
+    width: auto;
+    height: 3px;
+    background-color: #222;
+    margin-left: 5%;
+    margin-right:5%;
+}
+
+.visi, .misi {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.visi h2, .misi h2 {
+    color: #000000;
+}
+
+.misi-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.misi, .misi-container {
+    background-color: transparent; /* Membuat elemen ini mengikuti background halaman */
+}
+
+.misi-item {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: transparent; /* Membuat background mengikuti background laman */
+}
+
+.misi-item h3 {
+    font-size: 18px;
+    color: #007acc;
+    margin-bottom: 10px;
+}
+
+.misi-item {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: transparent; /* Membuat background mengikuti background laman */
+}
+
+
+.misi-item ul li {
+    margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+    .misi-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .misi-item {
+        flex: 1;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.section {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Slider container styling */
+.slider-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slider-content {
+    display: flex;
+    gap: 10px;
+    animation: scroll 20s linear infinite;
+}
+
+/* Card styling */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+    margin: 5px;
+}
+
+/* Optional: Add a hover effect for the cards */
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Image styling */
+.card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10%;
+    object-fit: cover;
+    transition: transform 1s;
+}
+
+.card-text {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+/* Infinite scroll animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-10%)
+    }
+}
+
+img{
+    width:100%;
+    transition:transform 1s;
+}
+
+@media (max-width: 480px) {
+    .card {
+        min-width: 100px;
+        padding: 10px;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}

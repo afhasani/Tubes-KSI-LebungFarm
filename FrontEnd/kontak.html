@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Info Desa Lebung Sari</title>
+    <link rel="stylesheet" href="Navbarmobile.css">
+    <link href="navbar.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+</head>
+<body>
+        <!--===== Header =====-->
+        <header id="header" class="header-container">
+            <div class="logo-container">
+                <a href="beranda.html" class="logo"><img src="assets/Logo lamsel.jpg" alt="Logo 1"></a>
+                <a href="beranda.html" class="logo"><img src="assets/Logo lamsel.jpg" alt="Logo 2"></a>
+                <div class="logo-text">
+                    <h1 class="main-title">LEBUNG FARM</h1>
+                    <p class="sub-title">Desa Lebung Sari</p>
+                </div>
+            </div>
+            <!-- Garis Vertikal -->
+            <div class="vertical-line"></div>
+            
+            <!-- Tombol Burger untuk tampilan mobile -->
+            <div class="mobile-nav-toggle" onclick="toggleMobileMenu()">
+                ☰ <!-- karakter untuk ikon burger -->
+            </div>
+
+            <!-- Icon close untuk menu mobile (sembunyikan awalnya) -->
+            <div class="mobile-nav-close" onclick="toggleMobileMenu()" style="display: none;">
+                X <!-- karakter untuk ikon close -->
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link" href="beranda.html">BERANDA</a></li>
+                    <li><a class="nav-link" href="tentangKami.html">TENTANG KAMI</a></li>
+                    <li><a class="nav-link" href="produk.html">PRODUK/LAYANAN</a></li>
+                    <li><a class="nav-link active" href="kontak.html">KONTAK KAMI</a></li>
+                </ul>
+            </nav>
+        </header>  
+    
+        <!-- Tambahkan JavaScript langsung di bawah ini atau di file script.js -->
+        <script>
+            function toggleMobileMenu() {
+                const navbar = document.getElementById('navbar');
+                navbar.classList.toggle('navbar-mobile'); // Toggle kelas 'navbar-mobile'
+            }
+        </script>
+    <!--END HEADER-->
+
+
+    <!--Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <h3>Inovasi Lokal,<br>Potensi Global</h3>
+            <p>35357</p>
+            <p>Kecamatan Merbau Mataram, Kabupaten Lampung Selatan, Lampung</p>
+        </div>
+        <div class="footer-right">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="beranda.html">Beranda</a></li>
+                <li><a href="tentangKami.html">Tentang Kami / Layanan</a></li>
+                <li><a href="produk.html">Produk/Layanan</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © 2024 UMKM Lebung Sari | All rights reserved.</p>
+        <button class="login-button">Login</button>
+    </div>
+</footer>
+
+</body>
+</html>

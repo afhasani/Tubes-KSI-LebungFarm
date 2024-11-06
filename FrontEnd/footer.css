@@ -1,0 +1,83 @@
+/* Footer styling */
+.footer {
+    background-color: #808080; /* Warna latar belakang abu-abu */
+    padding: 40px 0;
+    color: #ffffff;
+    text-align: left;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    margin: 5px 0;
+}
+
+.footer-right h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-right ul li {
+    margin-bottom: 5px;
+}
+
+.footer-right ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-right ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    background-color: #000000; /* Warna latar belakang hitam */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    position: relative;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Login button styling */
+.login-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.login-button:hover {
+    background-color: #1f67f7;
+}
+
