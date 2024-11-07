@@ -156,7 +156,7 @@
     </div>
     <div class="footer-bottom">
         <p>Copyright © 2024 UMKM Lebung Sari | All rights reserved.</p>
-        <button class="login-button">Login</button>
+        <a href="../login.php"><button class="login-button">Login</button></a>
     </div>
 </footer>
 
