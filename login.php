@@ -83,5 +83,12 @@ if (isset($_POST['login'])) {
         </div>  
     </div>
 </div>
+
+<!-- Tambahkan tautan kembali ke beranda di bawah tombol login -->
+<div style="margin-top:10px" class="form-group">
+    <div class="col-sm-12 controls text-center">
+        <a href="index.php" class="btn btn-default">Kembali ke Beranda</a>
+    </div>
+</div>
 </body>
 </html>
