@@ -113,35 +113,7 @@ $images = $conn->query("SELECT * FROM sliders");
     </header>
 
     <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <h2 style="margin-top: 5px;">Beranda</h2>
-        <ul>
-            <a href="#"><li>Slide Pertanian & Peternakan</li></a>
-            <a href="#"><li>Produk Unggulan Desa</li></a>
-            <a href="#"><li>Deskripsi Desa</li></a>
-            <a href="#"><li>Produk Favorit Desa</li></a>
-        </ul>
-        <h2>Tentang Kami</h2>
-        <ul>
-            <a href="#"><li>Sejarah Desa</li></a>
-            <a href="#"><li>Nama Kepala Desa / PJS Desa</li></a>
-            <a href="#"><li>Visi dan Misi Desa</li></a>
-            <a href="#"><li>Pemerintahan Desa</li></a>
-            <a href="#"><li>Sektor Pertanian Desa</li></a>
-            <a href="#"><li>Sektor Peternakan Desa</li></a>
-        </ul>
-        <h2>Produk / Layanan</h2>
-        <ul>
-            <a href="#top"><li>Slide Produk</li></a>
-            <a href="adm_dsh_KatalogProduk.php"><li>Katalog Produk</li></a>
-            <a href="#"><li>Ulasan Produk</li></a>
-        </ul>
-        <h2>Kontak Kami</h2>
-        <ul>
-            <a href="#"><li>Kontak</li></a>
-        </ul>
-        <a href="logout.php" style="display: grid; margin-right:auto;" class="logout_bt"><div>Log Out</div></a>
-    </div>
+    <?php include "sidebar.html"?>
 
     <!-- Main Content -->
     <div class="content" id="top">
