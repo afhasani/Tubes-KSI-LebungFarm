@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ulasan Pelanggan</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    .container {
+      padding: 20px;
+    }
+    .container h2 {
+      text-align: center;
+      text-decoration: underline;
+    }
+    .swiper-container {
+      width: 100%;
+      padding: 20px 0;
+    }
+    .swiper-slide:nth-child(odd) {
+      background-color: #D2691E; /* Warna latar belakang selang-seling */
+    }
+    .swiper-slide:nth-child(even) {
+      background-color: #F4E0C8; /* Warna latar belakang selang-seling */
+    }
+    .swiper-slide {
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      text-align: left;
+      width: 280px; /* Sesuaikan dengan kebutuhan */
+      transition: transform 0.3s ease; /* Haluskan transisi slide */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .review-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .review-card .lorem-text {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .review-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      text-decoration: underline; /* Menambahkan garis bawah pada nama */
+    }
+    .review-card p {
+      margin: 0;
+    }
+    .review-card .status {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .review-card .product {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .stars {
+      color: gold;
+     
+    }
+    .product-stars-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .product-stars-container  .product{
+
+        text-align: right;
+
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>ULASAN PELANGGAN</h2>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="review-card">
+          <p class="lorem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3>Bela Sari</h3>
+          <p class="status">Status: Pelanggan</p>
+          <div class="product-stars-container">
+            <p class="product">Keripik Tempe</p>
+            <p class="stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review-card">
+          <p class="lorem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3>Billy Caldwell</h3>
+          <p class="status">Status: Pelanggan</p>
+          <div class="product-stars-container">
+            <p class="product">Ting - Ting Jahe</p>
+            <p class="stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review-card">
+          <p class="lorem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3>Fajar Ramadhan</h3>
+          <p class="status">Status: Pelanggan</p>
+          <div class="product-stars-container">
+            <p class="product">Eyeek Singkong</p>
+            <p class="stars">★★★★☆</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review-card">
+          <p class="lorem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3>Fajar Ramadhan</h3>
+          <p class="status">Status: Pelanggan</p>
+          <div class="product-stars-container">
+            <p class="product">Eyeek Singkong</p>
+            <p class="stars">★★★★☆</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review-card">
+          <p class="lorem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3>Fajar Ramadhan</h3>
+          <p class="status">Status: Pelanggan</p>
+          <div class="product-stars-container">
+            <p class="product">Eyeek Singkong</p>
+            <p class="stars">★★★★☆</p>
+          </div>
+        </div>
+      </div>
+      <!-- Tambahkan ulasan lain di sini -->
+    </div>
+    <!-- Tombol navigasi -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    loop: true,
+    autoplay: {
+      delay: 3000,  // Mengatur jeda antar slide (3 detik)
+      disableOnInteraction: false, // Memungkinkan autoplay berlanjut meskipun ada interaksi
+    },
+    speed: 500, // Mengatur kecepatan transisi antar slide (500ms)
+    effect: 'slide', // Menambahkan efek geser (slide)
+  });
+</script>
+
+</body>
+</html>
