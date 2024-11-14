@@ -3,6 +3,7 @@
 $connection = new mysqli("localhost", "root", "", "monitoring_db");
 $koneksi = new mysqli("localhost", "root", "", "slider_pp");
 $conn = new mysqli("localhost", "root", "", "deskripsi_desa");
+$konek = new mysqli("localhost", "root", "", "produk_beranda");
 
 if ($connection->connect_error) {
    die("Koneksi gagal: " . $connection->connect_error);
@@ -13,6 +14,54 @@ if ($koneksi->connect_error) {
 // Cek koneksi
 if ($conn->connect_error) {
    die("Koneksi gagal: " . $conn->connect_error);
+}
+if ($konek->connect_error) {
+   die("Koneksi gagal: " . $konek->connect_error);
+}
+
+
+
+$sql_deskripsi_unggulan = "SELECT deskripsi FROM deskripsi WHERE kategori = 'unggulan' LIMIT 1";
+$result_deskripsi_unggulan = $konek->query($sql_deskripsi_unggulan);
+$deskripsi_unggulan = "";
+if ($result_deskripsi_unggulan->num_rows > 0) {
+    $row = $result_deskripsi_unggulan->fetch_assoc();
+    $deskripsi_unggulan = $row['deskripsi'];
+}
+
+// Query untuk mengambil deskripsi produk favorit
+$sql_deskripsi_favorit = "SELECT deskripsi FROM deskripsi WHERE kategori = 'favorit' LIMIT 1";
+$result_deskripsi_favorit = $konek->query($sql_deskripsi_favorit);
+$deskripsi_favorit = "";
+if ($result_deskripsi_favorit->num_rows > 0) {
+    $row = $result_deskripsi_favorit->fetch_assoc();
+    $deskripsi_favorit = $row['deskripsi'];
+}
+
+// Query untuk mengambil data produk unggulan
+$sql_produk_unggulan = "SELECT gambar, caption FROM produk_beranda WHERE kategori = 'unggulan' ORDER BY id ASC";
+$result_produk_unggulan = $konek->query($sql_produk_unggulan);
+$produk_unggulan = [];
+if ($result_produk_unggulan->num_rows > 0) {
+    while ($row = $result_produk_unggulan->fetch_assoc()) {
+        $produk_unggulan[] = [
+            'gambar' => $row['gambar'],
+            'caption' => $row['caption']
+        ];
+    }
+}
+
+// Query untuk mengambil data produk favorit
+$sql_produk_favorit = "SELECT gambar, caption FROM produk_beranda WHERE kategori = 'favorit' ORDER BY id ASC";
+$result_produk_favorit = $konek->query($sql_produk_favorit);
+$produk_favorit = [];
+if ($result_produk_favorit->num_rows > 0) {
+    while ($row = $result_produk_favorit->fetch_assoc()) {
+        $produk_favorit[] = [
+            'gambar' => $row['gambar'],
+            'caption' => $row['caption']
+        ];
+    }
 }
 
 
@@ -57,6 +106,7 @@ if ($result_peternakan->num_rows > 0) {
 }
 
 $conn->close();
+$konek->close();
 ?>
 
 <!DOCTYPE html>
@@ -164,31 +214,41 @@ $conn->close();
        Produk Unggulan Desa Lebung Sari
     </div>
     <div class="product-description">
-       Produk unggulan dari Desa Lebung Sari dihasilkan melalui keahlian masyarakat lokal dan proses yang dijaga dengan baik. Setiap tahapan pembuatan dilakukan dengan cermat untuk menghasilkan Opak Singkong yang berkualitas dan autentik, memadukan cita rasa khas dengan kepuasan pelanggan.
+       <?php echo $deskripsi_unggulan; ?>
     </div>
     <div class="product-gallery">
-       <div class="product-image-item product-large-image">
-          <img alt="Opak Singkong, a traditional Indonesian snack made from cassava, displayed in a large bowl." src="assets/produkunggulan1.png"/>
-          <div class="product-caption" style="margin-bottom: 10px;">
-             Produk Unggulan Opak Singkong
-          </div>
-       </div>
-       <div class="product-small-images">
-          <div class="product-image-item product-small-image">
-             <img alt="A person shaping Opak Singkong dough in a traditional kitchen setting." src="assets/produkunggulan2.png"/>
-             <div class="product-caption">
-                Proses Pencetakan
-             </div>
-          </div>
-          <div class="product-image-item product-small-image">
-             <img alt="Opak Singkong drying process in an open, sunny area, using bamboo trays." src="assets/produkunggulan3.png"/>
-             <div class="product-caption">
-                Proses Penjemuran
-             </div>
-          </div>
-       </div>
+        <?php
+        // Menampilkan gambar utama dan caption produk unggulan
+        if (isset($produk_unggulan[0])) {
+            echo '
+            <div class="product-image-item product-large-image">
+                <img alt="Produk Unggulan" src="produk_beranda/' . $produk_unggulan[0]['gambar'] . '"/>
+                <div class="product-caption" style="margin-bottom: 10px;">
+                    ' . $produk_unggulan[0]['caption'] . '
+                </div>
+            </div>';
+        }
+
+        // Menampilkan gambar-gambar kecil dan caption produk unggulan
+        if (count($produk_unggulan) > 1) {
+            echo '<div class="product-small-images">';
+            foreach ($produk_unggulan as $key => $produk) {
+                if ($key > 0) { // Mulai dari indeks 1 untuk gambar kecil
+                    echo '
+                    <div class="product-image-item product-small-image">
+                        <img alt="' . $produk['caption'] . '" src="produk_beranda/' . $produk['gambar'] . '"/>
+                        <div class="product-caption">
+                            ' . $produk['caption'] . '
+                        </div>
+                    </div>';
+                }
+            }
+            echo '</div>';
+        }
+        ?>
     </div>
  </div>
+
 
   <!-- Desa Lebung Sari and UMKM Desa Lebung Sari Info Section -->
   <div class="info-container">
@@ -202,36 +262,45 @@ $conn->close();
         </div>
   </div>
 
-   <div class="product-section">
-      <div class="product-title">
-         Produk Favorit Desa Lebung Sari
-      </div>
-      <div class="product-description">
-         Rengginang dari Desa Lebung Sari dihasilkan melalui keahlian masyarakat lokal dan proses yang dijaga dengan baik. Setiap tahapan pembuatan dilakukan dengan cermat untuk menghasilkan Rengginang berkualitas yang khas dan autentik.
-      </div>
-      <div class="product-gallery">
-         <div class="product-small-images">
-            <div class="product-image-item product-small-image">
-               <img alt="A person shaping Opak Singkong dough in a traditional kitchen setting." src="assets/produkfavorit2.png"/>
-               <div class="product-caption">
-                  Proses Pencetakan
-               </div>
-            </div>
-            <div class="product-image-item product-small-image">
-               <img alt="Opak Singkong drying process in an open, sunny area, using bamboo trays." src="assets/produkfavorit3.png"/>
-               <div class="product-caption">
-                  Proses Penjemuran
-               </div>
-            </div>
-         </div>
-         <div class="product-image-item product-large-image">
-            <img alt="Opak Singkong, a traditional Indonesian snack made from cassava, displayed in a large bowl." src="assets/produkfavorit1.png"/>
-            <div class="product-caption" style="margin-bottom: 10px;">
-               Produk Favorit Rengginang
-            </div>
-         </div>
-      </div>
-   </div>
+  <div class="product-section">
+    <div class="product-title">
+       Produk Favorit Desa Lebung Sari
+    </div>
+    <div class="product-description">
+       <?php echo $deskripsi_favorit; ?>
+    </div>
+    <div class="product-gallery">
+        <?php
+        // Menampilkan gambar utama dan caption produk favorit
+        if (isset($produk_favorit[0])) {
+            echo '
+            <div class="product-image-item product-large-image">
+                <img alt="Produk Favorit" src="produk_beranda/' . $produk_favorit[0]['gambar'] . '"/>
+                <div class="product-caption" style="margin-bottom: 10px;">
+                    ' . $produk_favorit[0]['caption'] . '
+                </div>
+            </div>';
+        }
+
+        // Menampilkan gambar-gambar kecil dan caption produk favorit
+        if (count($produk_favorit) > 1) {
+            echo '<div class="product-small-images">';
+            foreach ($produk_favorit as $key => $produk) {
+                if ($key > 0) { // Mulai dari indeks 1 untuk gambar kecil
+                    echo '
+                    <div class="product-image-item product-small-image">
+                        <img alt="' . $produk['caption'] . '" src="produk_beranda/' . $produk['gambar'] . '"/>
+                        <div class="product-caption">
+                            ' . $produk['caption'] . '
+                        </div>
+                    </div>';
+                }
+            }
+            echo '</div>';
+        }
+        ?>
+    </div>
+ </div>
    <footer class="footer-front">
       <div class="footer-content">
          <div class="footer-left">
