@@ -1,0 +1,383 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0;
+}
+.container {
+    position: relative;
+    margin: 0;
+    padding: 20px;
+    max-width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Background konten dengan sedikit transparansi */
+    z-index: 2; /* Pastikan konten berada di atas pseudo-elemen */
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/bg1.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.5; /* Opacity background */
+    filter: blur(1px); /* Efek blur pada background */
+    z-index: 1; /* Tempatkan pseudo-elemen di belakang konten */
+}
+
+/* Pastikan elemen teks tetap berada di atas pseudo-elemen */
+.container1,
+.table-container,
+.highlight {
+    position: relative;
+    z-index: 2;
+    color: #000; /* Warna teks */
+}
+
+table tr th, table tr td{
+    z-index: 10;
+    position: relative;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+hr {
+    border: 0;
+    height: 2px;
+    background: black;
+    margin-bottom: 20px;
+    width:90%;
+}
+.container p, .visi p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.table-container {
+    margin-top: 50px;
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width:691px){
+    table{
+        width: 50%;
+    }
+}
+@media (max-width:698px){
+    table{
+        width: 60%;;
+    }
+}
+@media (max-width:555px){
+    table{
+        width: 70%;;
+    }
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: rgba(217, 217, 217, 0.65); /* Latar belakang dengan transparansi */
+    color: #000; /* Warna teks tetap solid */
+}
+
+td {
+    background-color: rgba(255, 255, 255, 0.25); /* Latar belakang dengan transparansi */
+    color: #000; /* Warna teks tetap solid */
+}
+
+
+
+.content {
+    width: flex;
+    padding: 60px;
+    background-color: rgb(255, 255, 255);
+    
+}
+.content1 {
+    background: linear-gradient(
+        to right,
+        #1A2C3D 0%,     /* Biru tua */
+        #AFC8DC 100%    /* Biru muda */
+    );
+    margin: 20px 0px;
+    padding: 20px;
+    max-width: 100%;
+}
+.content2 {
+    background: linear-gradient(to right, #b3d9d3, #f0e6b3);
+    margin: 20px 0px;
+    padding: 20px;
+    max-width: 100%;
+}
+
+.content3 {
+    background-color: rgba(200, 184, 178, 0.482); /* Warna cokelat muda dengan transparansi */
+    margin: 20px 0px;
+    padding: 20px;
+    max-width: 100%;
+}
+
+.head {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+.head h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+.head hr {
+    margin-top: 10px;
+    border: 0;
+    border-top: 2px solid #000;
+    max-width: 90%;
+    height: 1px;
+}
+.visi {
+    position: relative;
+    border: 2px solid #000000d4;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    width: 80%; /* Menetapkan lebar */
+    margin: auto; /* Mengatur kotak ke tengah */
+    color: black; /* Warna teks */
+}
+
+.visi div{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+@media (min-width:470px){
+    .visi p{
+        font-size: 20px;
+    }
+}
+@media (max-width:470px){
+    .visi p{
+        font-size: 18px;
+    }
+    .visi div{
+        font-weight: bold;
+        font-size: 23px;
+    }
+}
+
+.visi::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/bg3.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.5; /* Opacity background */
+    border-radius: 20px;
+    backdrop-filter: blur(10px); /* Efek blur */
+    z-index: 1;
+}
+
+
+
+.visi-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.misi {
+    position: relative;
+    border: 2px solid #000000d4;
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    color: #000; /* Warna teks */
+    background-color: rgb(255, 255, 255, 0.9); /* Transparansi background konten */
+    z-index: 2; /* Menjaga konten tetap di atas pseudo-elemen */
+}
+
+.misi::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/bg2.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.5; /* Opacity background */
+    border-radius: 20px;
+    backdrop-filter: blur(10px); /* Efek blur */
+    z-index: 1; /* Menempatkan pseudo-elemen di belakang konten */
+}
+
+/* Pastikan elemen teks tetap di atas */
+.misi-title,
+.misi-content,
+.misi-item,
+.misi-item h3,
+.misi-item ul {
+    position: relative;
+    z-index: 2; /* Memastikan semua teks tidak terkena blur dan transparansi */
+}
+
+
+.misi-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top:10px;
+}
+.misi-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.misi-item {
+    background-color: #ffffffab;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+}
+.misi-item h3 {
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.misi-item ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.misi-item ul li {
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+    .misi-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .misi-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+.slider {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    
+    
+}
+.profiles {
+    display: flex;
+    gap: 10px;
+    width: (200% + 10px);
+    animation: slide 20s linear infinite;
+    
+}
+.profile {
+    background-color: #d9d9d9;
+    border: 2px solid #4a6b82;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+@media (min-width: 965px){
+    .profile{
+        width: 18%;
+    }
+    h1{
+        font-size: 24px;
+    }
+}
+@media (max-width: 810px){
+    .profile{
+        width: 40%;
+    }
+    h1{
+        font-size: 22px;
+    }
+}
+@media (max-width: 475px){
+    .profile{
+        width: 50%;
+    }
+    h1{
+        font-size: 20px;
+    }
+}
+.profile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.profile img {
+    width: 100%;
+    border-radius: 10px;
+}
+.profile .name {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    width: 100%;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    margin: 0 auto;
+}
+.profile .position {
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    width: 100%;
+    line-height: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile .position span {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}

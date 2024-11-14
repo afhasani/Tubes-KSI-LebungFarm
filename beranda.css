@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@keyframes slideDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Responsive adjustments for the main content */
+
+/* Responsive adjustments for the main content */
+
+@media (max-width: 1500px) {
+  .welcome h1{
+    font-size: 60px;
+  }
+  .product-title{
+    font-size: 30px;
+  }
+  .product-large-image {
+    width: 60%; /* Larger image takes 60% width */
+  }
+  .product-small-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 35%; /* Smaller images take 35% width */
+  }
+  .product-small-image {
+    width: 300px;
+    height: 101px;
+  }
+  .product-small-image img {
+    width: 300px;
+    height: 101px;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-container {
+    gap: 20px;
+    display: flex;
+  }
+  .info-box {
+    padding: 20px;
+    width: 35%; /* Adjusts the max-width on medium screens */
+    justify-self: center;
+  }
+  .info-box h2{
+    font-size: 20px;
+  }
+  .product-section {
+    max-width: 100%;
+  }
+  .product-large-image img {
+    width: 456px;
+    height: 221px;
+  }
+  .product-description{
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-title{
+    font-size: 20px;
+    text-align: left;
+    justify-self: center;
+    width: 80%;
+  }
+  .product-description{
+    font-size: 15px;
+    width: 80%;
+    justify-self: center;
+  }
+  .product-large-image {
+    width: 80%; /* Larger image takes 60% width */
+  }
+  .product-small-images {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 80%;
+  }
+  .product-small-image {
+    width: 50%;
+    height: auto;
+  }
+  .product-small-image img {
+    width: 100%;
+    height: 101px;
+  }
+  .welcome h1 {
+    font-size: 38px;
+  }
+  .card-slider, .slider-content img {
+    width: 100%;
+    height: auto;
+  }
+  .product-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-small-image img {
+    width: 100%;
+    height: auto;
+  }
+  .product-large-image img {
+    width: 100%;
+    height: auto;
+}
+  .info-box {
+    padding: 15px;
+    display: grid;
+    width: 80%;
+  }
+  .info-box h2 {
+    font-size: 24px;
+  }
+  .product-title{
+    font-size: 25px;
+    text-align: left;
+    justify-self: center;
+    width: 80%;
+  }
+  .info-container{
+    display: grid;
+  }
+  .card-sliders{
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    display: grid;
+  }
+  .product-large-image .product-caption, .product-small-image .product-caption{
+    font-size: 12px;
+  }
+  
+}
+
+@media (max-width: 576px) {
+  .welcome h1{
+    font-size: 32px;
+  }
+  .product-title{
+    font-size: 20px;
+    text-align: left;
+    justify-self: center;
+    width: 80%;
+  }
+  .product-description{
+    font-size: 15px;
+    width: 80%;
+    justify-self: center;
+  }
+  .product-large-image {
+    width: 80%; /* Larger image takes 60% width */
+  }
+  .product-small-images {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 80%;
+  }
+  .info-container, .card-sliders {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    display: grid;
+  }
+  .info-box {
+    padding: 10px;
+    width: 70%;
+  }
+  .nav-button {
+    width: 25px;
+    height: 40px;
+  }
+  .label {
+    font-size: 12px;
+  }
+  .content h3 {
+    font-size: 20px;
+  }
+  .product-small-image .product-caption {
+    font-size: 8px;
+  }
+
+  .info-box h2 {
+    font-size: 20px;
+    width: 80%;
+    justify-self: center;
+    text-align: left;
+  }
+
+  .product-description {
+    font-size: 16px;
+    text-align: justify;
+    margin-bottom: 15px;
+  }
+
+  .product-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+}
+
+.welcome {
+  width: 100%;
+  min-height: 500px;
+  margin: 50px 0 100px 0;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+.welcome video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  width: auto;
+  height: 100%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+.welcome h1 {
+  color: white;
+  font-family: "kanit", serif;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0 50px;
+  animation: slideDown 2s ease-out;
+  animation-fill-mode: forwards;
+}
+.container {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+.card-sliders {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.card-slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-slider-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-slider {
+  width: 375px;
+  height: 195px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+.card-slider {
+  width: 375px;
+  height: 195px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+.slider-content {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider-content img {
+  width: 375px;
+  height: 195px;
+}
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 50px;
+  background-color: rgba(207, 207, 207, 0.25);
+  border: none;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px; 
+  color: #cfcfcf; 
+  text-shadow: 0px 0px 1px #ffffff,
+    0.5px 0.5px 1px #ffffff,
+    -0.5px -0.5px 1px #ffffff, 
+    0.5px -0.5px 1px #ffffff,
+    -0.5px 0.5px 1px #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.left-button {
+  left: 10px;
+}
+.right-button {
+  right: 10px;
+}
+.label {
+  width: 375px;
+  height: 50px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Styles for the product section */
+.product-section {
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 100px;
+}
+.product-title {
+  font-weight: bold;
+  margin-top: 20px;
+}
+.product-description {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: justify;
+  text-align-last: left;
+}
+.product-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.product-image-item {
+  position: relative;
+  margin-bottom: 10px;
+}
+.product-image-item img {
+  border-radius: 10px;
+}
+
+.product-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.75);
+  color: black;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 15px;
+  font-family: "Roboto Serif", serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+
+/* Additional container for Desa Lebung Sari and UMKM Desa Lebung Sari */
+.info-container {
+  justify-content: center;
+  width: 100%;
+  border-radius: 0px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  background-image: url('assets/info.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  gap: 125px;
+  margin-bottom: 100px;
+}
+.info-box {
+  background-color: white;
+  border-radius: 50px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.info-box:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+.info-box h2 {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+  transition: color 0.3s ease-in-out;
+}
+.info-box p {
+  line-height: 1.5;
+  text-align: justify;
+  font-size: 18px;
+}
+
+/*====Favorit====*/
+.content {
+  width: 95%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  color: #000;
+  position: relative;
+}
+
+p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px; /* Menambahkan jarak antar kolom */
+}
+
+.left-column, .right-column {
+  width: 50%;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Memberi jarak antara gambar dalam kolom kiri */
+}
+
+.image-content {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.image-content img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.image-content:hover {
+  transform: (1.05);
+}
+
+.caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.image-content:hover .caption {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+}
